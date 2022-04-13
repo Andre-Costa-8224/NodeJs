@@ -2,15 +2,15 @@ const express = require("express")
 const app = express()
 
 app.get("/", function(req,res){
-  res.send("pagina principal")
+  res.sendFile(__dirname + "/view/index.html")
 })
 
 app.get("/sobre", (req,res) => {
-  res.send("pagina sobre")
+  res.sendFile(__dirname + "/view/sobre.html")
 })
 
 app.get("/contato", (req, res) => {
-  res.send("pagina de contato")
+  res.sendFile(__dirname + "/view/contato.html")
 })
 
 app.listen(8081,function(){
