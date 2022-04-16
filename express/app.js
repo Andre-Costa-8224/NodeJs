@@ -1,16 +1,18 @@
 const express = require("express")
 const Sequelize = require("sequelize")
 
-const sequelize = new Sequelize("teste", "u0_a1269", "", {
-				host: "localhost",
-				dialect: "mariadb",
-				port: "3306"
+//--------parte de Conexão Com Banco----
+
+const sequelize = new Sequelize("andreteste01", "andre_root8224", "andre_root8224", {
+				host: "db4free.net",
+				dialect: "mysql",
+				port: '3306'
 })
 
 
 sequelize.authenticate().then(() => console.log("conectado com sucesso!")). catch ((err) => console.log("erro: "+err))
 
-/*
+
 const produtos = sequelize.define("produto", {
 				nome: {
 								type: Sequelize.STRING
@@ -23,8 +25,16 @@ const produtos = sequelize.define("produto", {
 				}
 })
 
+
+produtos.create({
+	nome: "Limão",
+	categoria: "Frutas",
+	descricao: "Uma Fruta Cítrica Com Alto Nível De pH"
+})
+
 produtos.sync({force: true})
-*/
+
+//-------------parte de http------------
 
 const app = express()
 
@@ -40,6 +50,7 @@ app.get("/contato", (req, res) => {
   res.sendFile(__dirname + "/view/contato.html")
 })
 
+//inicia a aplicação na porta 8081
 app.listen(8081,function(){
   return console.log("server is running")
 })
