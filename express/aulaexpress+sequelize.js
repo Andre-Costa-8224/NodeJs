@@ -3,7 +3,7 @@ const Sequelize = require("sequelize")
 
 //--------parte de Conexão Com Banco----
 
-const sequelize = new Sequelize("andreteste01", "andre_root8224", "andre_root8224", {
+const sequelize = new Sequelize("teste01", "root", "root", {
 				host: "db4free.net",
 				dialect: "mysql",
 				port: '3306'

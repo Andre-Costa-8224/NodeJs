@@ -2,8 +2,8 @@ const mysql = require('mysql')
 
 const connection = mysql.createConnection({
 				host: 'db4free.net',
-				user: 'andre_root8224',
-				password: 'andre_root8224',
+				user: 'root',
+				password: 'root',
 				database: 'andreteste01'
 })
 

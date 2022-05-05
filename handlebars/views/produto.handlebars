@@ -1,0 +1,8 @@
+<h1>Lista De Pagamentos</h1>
+{{#each produtos}}
+  Nome: {{nome}}<br>
+  Categoria: {{categoria}}<br>
+  Descricao: {{descricao}}<br>
+  <a href="/del-produto/{{id}}"><button>Apagar</button></a>
+  <hr>
+{{/each}}
